@@ -1,0 +1,25 @@
+global:
+    verbose: True
+    continue_with_ignore_exception: True
+    targets:  # Multiple twitter id are OK, however DD is not recommended IMHO
+        - justinbieber  # replace someome's twitter id 
+        # - BrunoMars
+
+twitter:
+    # the following items are REQUIRED
+    consumer_key: "YkNgA4DgsaWll5DH4fIH"  # replace yours 
+    consumer_secret: "Q1dKLT5EjLIPeBREGyU91gEPsKsNQd6VqK5GEp27Ny7"  # replace yours
+    access_token: "9SDBOcrAridwMO5Ddel5RTwqMwFd9VcGVpqzCLt1P1z33dKh3n"  # replace yours
+    access_token_secret: "sZ7kRE0Ivj7FihKdlDN5fuq9qMzxXST1esBtBW9zTIzD4"  # replace yours
+    wait_sec: 20
+
+lingr:
+    enabled: True  # the following items are not required unless True
+    bot_id: "botbotname"  # replace your bot_id
+    bot_secret: "E1uHS4Ihaw54yGfnC0GfLAZWctJ"  # replace your secret
+    room: "your_lingr_room"  # replace your room
+
+slack:
+    enabled: True  # the following items are not required unless True
+    slack_webhook_url: "https://hooks.slack.com/services/T1msIltC6/qgG11HwJI/t5GM5G2Exm8WdV6srvTW5Tm83"  # replace your url
+    slack_channel: "#general"  # replace your channel
