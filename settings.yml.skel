@@ -4,7 +4,6 @@ global:
     targets:  # Multiple twitter id are OK, however DD is not recommended IMHO
         - justinbieber  # replace someome's twitter id 
         # - BrunoMars
-
 twitter:
     # the following items are REQUIRED
     consumer_key: "YkNgA4DgsaWll5DH4fIH"  # replace yours 
@@ -23,3 +22,5 @@ slack:
     enabled: True  # the following items are not required unless True
     slack_webhook_url: "https://hooks.slack.com/services/T1msIltC6/qgG11HwJI/t5GM5G2Exm8WdV6srvTW5Tm83"  # replace your url
     slack_channel: "#general"  # replace your channel
+
+# All of the above keys are dummy.
