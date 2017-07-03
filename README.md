@@ -32,6 +32,7 @@ this is a bot that quickly detect the Favoritting of someone's Twitter account, 
     $ mkdir -p ~/workspace
     $ git clone https://github.com/tinbotu/favwatch.git
    ```
+
 1. copy configration file from a skeleton file
 
    ```sh
@@ -49,18 +50,20 @@ this is a bot that quickly detect the Favoritting of someone's Twitter account, 
     8. Copy these to settings.yml ::  **Consumer Key, Consumer Secret, Access Token, Acces Token Secret**
 
 
-4. setup your Webhook to your Slack
+4. setup your Webhook to your Slack (if necessary)
     1. Go https://YOUR_TEAM.slack.com/apps/A0F7XDUAZ-incoming-webhooks
     2. Click **Add Configration**
     3. Choose a channel or create, Click **Add Incoming WebHooks integration**
     4. Copy **Webhook URL** to settings.yml
 
-5. setup your Lingr bot (optional)
+
+5. setup your Lingr bot (if necessary)
     1. Go <http://lingr.com/developer>
     2. Click **create a new bot**
     3. Fill in the form and click **Create**
     4. Copy **Secret** to settings.yml
     5. Go http://lingr.com/room/YOUR_ROOM/manage_bots and click **invite a new bot**, invite bot created above
+
 
 ### first run
 
