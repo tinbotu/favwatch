@@ -3,7 +3,7 @@
 ## Overview
 
 this is a bot that quickly detect the Favoritting of someone's Twitter account, and post it to a Slack and/or Lingr
-![seq](https://github.com/tinbotu/favwatch/blob/media/seq.gif)
+![seq](https://github.com/tinbotu/favwatch/blob/master/seq.gif)
 
 
 ## Description
