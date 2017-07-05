@@ -22,6 +22,7 @@ this is a bot that quickly detect the Favoritting of someone's Twitter account, 
     - venv
     - peewee
     - tweepy
+- Make
 
 
 ## how to setup
@@ -30,7 +31,8 @@ this is a bot that quickly detect the Favoritting of someone's Twitter account, 
 
    ```sh
     $ mkdir -p ~/workspace
-    $ git clone https://github.com/tinbotu/favwatch.git
+    $ git clone https://github.com/tinbotu/favwatch.git ~/workspace/favwatch
+    $ cd ~/workspace/favwatch
    ```
 
 1. copy configration file from a skeleton file
@@ -67,10 +69,20 @@ this is a bot that quickly detect the Favoritting of someone's Twitter account, 
 
 ### first run
 
+#### setup
+
 ```sh
 $ make setup
+```
+
+if it fails, make sure that Python3, Python3-venv, Make, compilier to build some modules are installed.
+
+#### run
+
+```sh
 $ make run
 ```
+
 at the first run, all recent favorites will post (such many). only difference will be posted from the next time.
 
 
