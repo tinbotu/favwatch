@@ -4,3 +4,4 @@ requests-oauthlib
 tweepy==3.5.0
 PyYAML
 flake8
+emoji

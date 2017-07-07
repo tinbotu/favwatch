@@ -13,6 +13,7 @@ import yaml
 import hashlib
 import tweepy
 import peewee
+import emoji
 
 
 from FavwatchLogModel import (
@@ -108,10 +109,16 @@ class PostLingr(Config):
         pass
 
     def build_say_payload(self, room: str, bot: str, text: str, apikey: str) -> dict:
+        # some emoji confuse lingr
+        try:
+            demojed = emoji.demojize(text)
+        except:
+            demojed = text
+
         return {
             'room': room,
             'bot': bot,
-            'text': text,
+            'text': demojed,
             'bot_verifier': hashlib.sha1(bot.encode("ascii") + apikey.encode("ascii")).hexdigest(),
         }
 
