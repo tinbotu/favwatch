@@ -2,7 +2,7 @@
 
 ## Overview
 
-this is a bot that quickly detect the Favoritting of someone's Twitter account, and post it to a Slack and/or Lingr
+this is a bot that quickly detect the Favoritting of **someone's Twitter account**, and post it to a Slack and/or Lingr
 ![seq](https://github.com/tinbotu/favwatch/blob/master/seq.gif)
 
 
@@ -64,6 +64,7 @@ this is a bot that quickly detect the Favoritting of someone's Twitter account, 
     1. Go <http://lingr.com/developer>
     2. Click **create a new bot**
     3. Fill in the form and click **Create**
+        - You have to prepare *dummy* URL that could to accept POST method, Fill in the *Callback URL*
     4. Copy **Secret** to settings.yml
     5. Go http://lingr.com/room/YOUR_ROOM/manage_bots and click **invite a new bot**, invite bot created above
 
@@ -87,9 +88,15 @@ $ make run
 at the first run, all recent favorites will post (such many). only difference will be posted from the next time.
 
 
+#### uninstall
+
+1. delete working directory that *git clone*
+2. revoke your Twitter APP, Slack WebHooks, etc (if necessary)
+
+
 ## Author
 
-Akira KUMAGAI <kumaguy@gmail.com>
+Akira KUMAGAI \<kumaguy@gmail.com\>
 
 
 ## License
