@@ -183,10 +183,12 @@ class Run(Config):
 
 
     def run(self) -> None:
+        timestamp_str = datetime.datetime.now().strftime('%H:%M:%S')
+        targets = self.settings["global"]["targets"]
+        fav = TwitterFavWatch()
+
         try:
-            fav = TwitterFavWatch()
-            newfavs = fav.get_favorites(self.settings["global"]["targets"])
-            d = datetime.datetime.now().strftime('%H:%M:%S')
+            newfavs = fav.get_favorites(targets)
 
             if self.verbose:
                 remain = fav.get_api_limit()
@@ -194,11 +196,12 @@ class Run(Config):
 
             for i in newfavs:
                 f = ("%s %s @%s %s https://twitter.com/%s/status/%s" %
-                     (d, i.user.name, i.user.screen_name, i.text, i.user.screen_name, i.id_str))
+                     (timestamp_str, i.user.name, i.user.screen_name, i.text, i.user.screen_name, i.id_str))
                 print(f)
                 self.lingr.say(f)
                 self.slack.say(f)
         except:
+            print(timestamp_str)
             traceback.print_exc()
             if not self.settings["global"]["continue_with_ignore_exception"]:
                 raise
