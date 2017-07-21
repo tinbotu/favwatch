@@ -82,6 +82,7 @@ class TwitterFavWatch(Config):
                         id_str=f.id_str,
                         fav_created_at=f.created_at)
                     s.save()
+                    f.fav_by_screen_name = target_screen_name
                     newfav.append(f)
 
             if not self.dry_run:
@@ -195,8 +196,8 @@ class Run(Config):
                 print("%d (%d sec)" % (remain.get("remaining"), time.time()-int(remain.get("reset"))))
 
             for i in newfavs:
-                f = ("%s %s @%s %s https://twitter.com/%s/status/%s" %
-                     (timestamp_str, i.user.name, i.user.screen_name, i.text, i.user.screen_name, i.id_str))
+                f = ("%s %s likes: %s @%s %s https://twitter.com/%s/status/%s" %
+                     (timestamp_str, i.fav_by_screen_name, i.user.name, i.user.screen_name, i.text, i.user.screen_name, i.id_str))
                 print(f)
                 self.lingr.say(f)
                 self.slack.say(f)
@@ -207,7 +208,8 @@ class Run(Config):
                 raise
 
         # print(".", end="")
-        time.sleep(self.settings["twitter"]["wait_sec"])
+        wait_sec = self.settings["twitter"]["wait_sec"] * len(self.settings["global"]["targets"])
+        time.sleep(wait_sec)
 
 
 
