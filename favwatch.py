@@ -135,7 +135,7 @@ class PostLingr(Config):
             apikey=self.settings["lingr"]["bot_secret"]
         )
         if not self.dry_run:
-            r = requests.post(self._endpoint_url, data=payload)
+            r = requests.post(self._endpoint_url, data=payload, timeout=30)
             return (r.status_code == requests.codes.ok)
         return False
 
@@ -160,7 +160,7 @@ class PostSlack(Config):
         }
         payload = "payload=" + self.build_say_payload(channel=self.settings["slack"]["slack_channel"], text=message)
         if not self.dry_run:
-            r = requests.post(self.settings["slack"]["slack_webhook_url"], headers=headers, data=payload)
+            r = requests.post(self.settings["slack"]["slack_webhook_url"], headers=headers, data=payload, timeout=30)
             return (r.status_code == requests.codes.ok)
 
         return False
