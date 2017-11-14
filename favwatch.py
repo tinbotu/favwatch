@@ -44,7 +44,7 @@ class TwitterFavWatch(Config):
     def __init__(self, sqlite_file='favwatch_log.sqlite') -> None:
         auth = tweepy.OAuthHandler(self.settings["twitter"]["consumer_key"], self.settings["twitter"]["consumer_secret"])
         auth.set_access_token(self.settings["twitter"]["access_token"], self.settings["twitter"]["access_token_secret"])
-        self.api = tweepy.API(auth)
+        self.api = tweepy.API(auth, timeout=15)
         favwatch_log.initialize(peewee.SqliteDatabase(sqlite_file, journal_mode='WAL'))
         favwatch_log.create_tables([FavLog], True)
 
