@@ -201,6 +201,9 @@ class Run(Config):
                 print(f)
                 self.lingr.say(f)
                 self.slack.say(f)
+        except (requests.exceptions.ConnectTimeout, ):
+            print("%s Timeout" % timestamp_str)
+
         except:
             print(timestamp_str)
             traceback.print_exc()
