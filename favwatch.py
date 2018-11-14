@@ -56,7 +56,7 @@ class TwitterFavWatch(Config):
 
             if len(fav) > 0:
                 fav.reverse()
-                newfav = self.get_new_favorites_and_save(target, fav)
+                newfav = self.get_new_favorites_and_save(target_screen_name=target, fav=fav)
 
         return newfav
 
