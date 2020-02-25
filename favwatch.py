@@ -52,11 +52,14 @@ class TwitterFavWatch(Config):
         newfav = list()
 
         for target in targets:
-            fav = self.api.favorites(target, count=200)
+            try:
+                fav = self.api.favorites(target, count=200)
 
-            if len(fav) > 0:
-                fav.reverse()
-                newfav.extend(self.get_new_favorites_and_save(target_screen_name=target, fav=fav))
+                if len(fav) > 0:
+                    fav.reverse()
+                    newfav.extend(self.get_new_favorites_and_save(target_screen_name=target, fav=fav))
+            except (tweepy.error.TweepError, ):
+                traceback.print_exc()
 
         return newfav
 
