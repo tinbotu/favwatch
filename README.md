@@ -96,7 +96,7 @@ at the first run, all recent favorites will post (such many). only difference wi
 
 ## Author
 
-Akira KUMAGAI \<kumaguy@gmail.com\>
+github: tinbotu
 
 
 ## License
